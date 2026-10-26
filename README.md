@@ -23,9 +23,21 @@
   <img src="assets/screenshots/demo.gif" width="88%" alt="Prism Arena demo" />
 </p>
 
+<p align="center">
+  <img src="assets/banner.png" width="100%" alt="Prism Arena banner" />
+</p>
+
+<p align="center">
+  <a href="https://krishyaa06.github.io/prism-bots-panel/#/dashboard/arena"><img src="https://img.shields.io/badge/Web-Dashboard-6C63FF?style=for-the-badge&logo=googlechrome&logoColor=white" /></a>
+  <a href="https://dc.gg/prismprotocol"><img src="https://img.shields.io/badge/Prism_Protocol-Private_bot-FF5EA8?style=for-the-badge&logo=discord&logoColor=white" /></a>
+</p>
+
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" width="100%" />
 
 ## ⚡ Overview
+
+> [!NOTE]
+> **Private bot for the [Prism Protocol](https://dc.gg/prismprotocol) server.** Prism Arena is not listed for public invites. The code is open so you can learn from it or self-host your own copy. Join the community to see it live, or open its page on the [Prism Bots Panel](https://krishyaa06.github.io/prism-bots-panel/#/bot/arena).
 
 **Prism Arena** turns any Discord server into a hackathon venue.
 Organizers create an event, hackers form teams with invite codes, submit their projects with a slash command, judges score them on four criteria and a **live leaderboard** updates instantly. When time is up, the bot announces the podium automatically.
@@ -148,6 +160,25 @@ npm start
 ```
 
 Then run `/arena config announcements:#hackathon judge_role:@Judges organizer_role:@Organizers` and you are ready for `/event create`.
+
+## 🌐 Web dashboard
+
+Prism Arena has a built-in API for the [Prism Bots Panel](https://krishyaa06.github.io/prism-bots-panel/#/dashboard/arena), so staff can change settings and see live stats from the browser.
+
+1. Set `PANEL_API_PORT=8080` (any free port) in `.env` and restart the bot. `PANEL_ORIGIN` defaults to `https://krishyaa06.github.io`.
+2. Expose it over HTTPS, e.g. Caddy `arena.example.com { reverse_proxy localhost:8080 }` or a Cloudflare Tunnel.
+3. In the panel repo, set `bots.arena.apiUrl` in `js/config.js` to that URL.
+
+Login uses Discord OAuth2 (`identify guilds`). Every request is checked for **Manage Server** in that guild.
+
+## 🎨 Branding
+
+| File | Use |
+| --- | --- |
+| `assets/logo.svg` / `assets/logo.png` | Logo |
+| `assets/banner.png` | README / social preview (1280×400) |
+| `assets/discord/avatar.png` | Discord avatar / app icon (1024×1024) |
+| `assets/discord/profile-banner.png` | Discord profile banner (1360×480) |
 
 ## 🧮 Scoring
 

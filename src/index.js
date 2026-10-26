@@ -20,4 +20,10 @@ loadEvents(client);
 
 process.on('unhandledRejection', err => log.error('Unhandled rejection:', err));
 
+// Optional web panel API (https://krishyaa06.github.io/prism-bots-panel)
+const panelPort = Number(process.env.PANEL_API_PORT) || 0;
+if (panelPort) {
+    require('./lib/panelApi').start(client, { port: panelPort, origin: process.env.PANEL_ORIGIN || 'https://krishyaa06.github.io' }, require('./lib/panelAdapter')(client));
+}
+
 client.login(config.token);
