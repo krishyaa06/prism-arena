@@ -9,10 +9,28 @@
     "check": "node scripts/check.js",
     "test": "node --test"
   },
-  "keywords": ["discord", "discord-bot", "discord.js", "hackathon", "coding-challenge", "leaderboard", "prism-protocol"],
+  "keywords": [
+    "discord",
+    "discord-bot",
+    "discord.js",
+    "hackathon",
+    "coding-challenge",
+    "leaderboard",
+    "prism-protocol"
+  ],
   "author": "Soumya Bhandare (krishyaa06)",
   "license": "MIT",
-  "engines": { "node": ">=18.17" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krishyaa06/prism-arena.git"
+  },
+  "bugs": {
+    "url": "https://github.com/krishyaa06/prism-arena/issues"
+  },
+  "homepage": "https://krishyaa06.github.io/prism-bots-panel/#/bot/arena",
+  "engines": {
+    "node": ">=18.17"
+  },
   "dependencies": {
     "discord.js": "^14.16.0",
     "dotenv": "^16.4.5"
